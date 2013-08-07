@@ -44,9 +44,9 @@ class Player
     if (millis() - shootTime >= 70 && (mousePressed || autoFire))
     {
       if (facingRight)
-        bullets.add(new BulletStraight(new PVector(99, 0), new PVector(p.loc.x, p.loc.y), 5, 10));
+        bullets.add(new BulletStraight(new PVector(99, 0), new PVector(p.loc.x, p.loc.y), 5, 1, 10.0, true));
       else
-        bullets.add(new BulletStraight(new PVector(-99, 0), new PVector(p.loc.x, p.loc.y), 5, 10));
+        bullets.add(new BulletStraight(new PVector(-99, 0), new PVector(p.loc.x, p.loc.y), 5, 1, 10.0, true));
       shootTime = millis();
     }
   }

@@ -1,17 +1,20 @@
 class BulletStraight extends Bullet
 {
   PVector vel, loc;
-  int bulletSize;
+  int bulletSize, damage;
   float speed;
 
-  BulletStraight(PVector vel, PVector loc, int bulletSize, float speed)
+  BulletStraight(PVector vel, PVector loc, int bulletSize, int damage, float speed, boolean madeByPlayer)
   {
-    super(vel, loc, bulletSize, speed);
+    super(vel, loc, bulletSize, damage, speed, madeByPlayer);
   }
 
   void show()
   {
-    fill(0, 255, 0);
+    if (madeByPlayer)
+      fill(0, 255, 0);
+    else
+      fill(255, 0, 0);
     super.show();
   }
 
